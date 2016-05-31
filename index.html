@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+<title>HAB tracker</title>
+
+<script src="./js/lib.js"></script>
+
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script src="./js/Leaflet.MakiMarkers.js"></script>
+<script src="./js/leaflet-providers.js"></script>
+<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+<script src="http://psha.org.ru/leaflet/plugins/layer/tile/Google.js"></script>
+    
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<div id="location">
+<div id="gps">
+  <div id='gps-update-intvl'>
+    <select>
+      <option value="0" selected="selected">izslēgts</option>
+      <option value="9999">fiksēta poz.</option>
+      <option value="1">1 s</option>
+      <option value="5">5 s</option>
+      <option value="10">10 s</option>
+      <option value="30">30 s</option>
+      <option value="60">60 s</option>
+    </select>
+  </div>
+  <div id='location-title'>GPS dati</div>
+  <div id="gps-position"></div>
+  <div class="info-links">
+    <!-- <a href="#" id="gps_update">ieslēgt</a> -->
+    <a href="#" class="map_center hidden" onclick='return map_panTo("gps");'>centrēt</a>
+    <a href="#" class="map_follow hidden" onclick='return map_follow("gps");'>sekot</a>
+    <a href="#" class="map_toggle _hidden" onclick='return map_toggle("gps");'>slēpt</a>
+  <span id="gps-upload-intvl">
+    <img src="http://icons.iconarchive.com/icons/icons8/ios7/128/Industry-Radio-Tower-icon.png" width="14"/>
+    <select>
+      <option value="0" selected="selected">nesūtīt</option>
+      <option value="5">5 s</option>
+      <option value="10">10 s</option>
+      <option value="30">30 s</option>
+      <option value="60">60 s</option>
+      <option value="120">2 m</option>
+      <option value="180">3 m</option>
+    </select>
+  </span>
+  </div>
+</div>
+</div>
+
+<div id="payloads"></div>
+
+
+<div id="map"></div>
+<div id="map-coordinates">coordinates</div>
+
+<script src="./js/tracker.js"></script>
+</body>
+</html>
